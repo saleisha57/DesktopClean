@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='hero'>
+    <h1>Search Results</h1>
+    {% if results %}
+    <ul>
+        {% for result in results %}
+            <li><a href="{% url 'view-profile' result.pk %}">{{ result.first_name }} {{ result.last_name}}</a></li> 
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No results found.</p> 
+    {% endif %}
+</div>
+{% endblock %}

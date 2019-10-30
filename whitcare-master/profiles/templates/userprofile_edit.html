@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero" id="hero">
+<form action="" method="post">
+	{{ form.non_field_errors }}
+	<div>
+		{{ form.first_name.errors }}
+		{{ form.last_name.errors }}
+		<label for="{{ form.first_name.id_for_label }}" class="hero_header">First Name:</label>
+		{{ form.first_name }}
+		<label for="{{ form.last_name.id_for_label }}" class="light">Last Name:</label>
+		{{ form.last_name }}
+	</div>
+	<div>
+		{{ form.phone_number.errors }}
+		{{ form.email.errors }}
+		<label for="{{ form.phone_number.id_for_label }}" class="tagline">Phone Number:</label>
+		{{ form.phone_number }}
+		<label for="{{ form.email.id_for_label }}" class="tagline">Email:</label>
+		{{ form.email }}
+	</div>
+	<div>
+		{{ form.available_weeknights.errors }}
+		{{ form.available_weekends.errors }}
+		<label class="tagline">Availability:</label>
+		{{ form.available_weeknights }}
+		<label for="{{ form.available_weeknights.id_for_label }}">Weeknights</label>
+		{{ form.available_weekends }}
+		<label for="{{ form.available_weekends.id_for_label }}">Weekends</label>
+	</div>
+	<div> 
+		{{ form.rate.errors }}
+		<label for="{{ form.rate.id_for_label }}" class="tagline">Rate:</label>
+		{{ form.rate }}
+	</div>
+	<div class="submit">
+		<input type="submit" value="Submit" id="basic" />
+	</div>
+	{{ form.skills }}
+	{% csrf_token %}
+</form>
+</section>
+<!-- About Section -->
+<div class="about"> 
+<h2 class="hidden">About</h2>
+
+<section class="about" id="bio">
+	<h1>Bio</h1>
+	<p>About Me:</p>
+	<form action="" >
+	<textarea name="userbio" cols="30" rows="4"></textarea>
+		<br/>
+		<input type="submit" value="Submit" id="submit_bio" />
+	</form>
+</section>
+
+<section class="about" id="references">
+	<h1>References</h1>
+	<form action="" method="post">
+	<p>Resume:</p>
+	<input type="file" name="resume" /><br/>
+	<input type="submit" value="Upload" /><br/>
+	<br/>
+	<p>Cover letter:</p>
+		<input type="file" name="coverletter" /><br/>
+	<input type="submit" value="Upload" /><br/>
+	</form>
+</section>
+
+<section class="about" id="skills">
+	<h1>Skills</h1>
+	<form action="">
+		<input type="checkbox" name="userskill" value="cpr" />CPR
+		<br/>
+		<input type="checkbox" name="userskill" value="first_aid" />First Aid
+		<br/>
+		<input type="checkbox" name="userskill" value="diaper_changing" />Diaper Changing
+		<br/>
+		<input type="checkbox" name="userskill" value="infants" />Experience with Infants
+		<br/>
+		<input type="checkbox" name="userskill" value="toddlers" />Experience with Toddlers
+		<br/>
+		<input type="checkbox" name="userskill" value="three_and_up" />Experience with ages 3+
+		<br/>
+		<input type="checkbox" name="userskill" value="cooking" />Basic Cooking
+		<br/>
+		<input type="checkbox" name="userskill" value="transport" />Willing to Transport
+		<br/>
+		<input type="checkbox" name="userskill" value="house_cleaning" />Willing to provide light house cleaning
+		<br/>
+		<input type="checkbox" name="userskill" value="sick" />Willing to care for sick children
+		<br/>
+		<input type="checkbox" name="userskill" value="special_needs" />Will to watch child w/ special needs
+		<br/>
+		<input type="checkbox" name="userskill" value="watch_dogs" />Willing to watch dogs
+		<br/>
+		<input type="checkbox" name="userskill" value="house_sit" />Willing to house sit
+		<br/>
+	</form>
+</section>
+{% endblock %}

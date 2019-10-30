@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <div>
+    <p>Uploaded Photo Here</p>
+    
+    <label for="first_name" class="hero_header">{{ profile.first_name }}</label> 
+      
+    <label for="last_name" class="light">{{ profile.last_name }} </label>
+      
+  </div>
+  <div>
+    <label for="phone" class="tagline">{{ profile.phone_number }}</label>
+    <label for="email" class="tagline">{{ profile.email }} </label>
+  </div>
+    <div>
+    <label for="availability" class="tagline">Available 
+      {% if profile.available_weekends %} Weekends {% endif %}
+      {% if profile.avilable_weeknights %} Weeknights {% endif %}
+    </label>
+  </div>
+  <div> 
+    <label for="rate" class="tagline">{{ profile.rate }}</label>
+  </div>
+</section>
+<!-- About Section -->
+<div class="info"> 
+  <h2 class="hidden">Info</h2>
+	
+  <section class="about" id="bio">
+    <h1>Bio</h1>
+	  <p>About Me:</p>
+	  <p>User-written bio here.</p>
+  </section>
+	
+  <section class="about" id="references">
+    <h1>References</h1>
+		<p>Resume:</p>
+		<p>Uploaded Resume Here</p>
+		<br/>
+		<p>Cover letter:</p>
+	  	<p>Uploaded Cover Letter Here</p>
+  </section>
+	
+  <section class="about" id="skills">
+    <h1>Skills</h1>
+	  <p>Chosen skills Here</p>
+  </section>
+
+  <a href="{% url 'edit-profile' pk=profile.pk %}">Edit Profile</a>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <h2 class="hero_header">WHIT <span class="light">Care</span></h2>
+  <p class="tagline">A Photo Goes Here</p>
+</section>
+<!-- More Info Section -->
+<footer>
+  <article class="footer_column">
+    <h3>Search</h3>
+    <img src="{% static 'images/placeholder.jpg' %}" alt="" width="400" height="200" class="cards"/>
+    <br>
+  <br>
+  <form action="/action_page.php">
+        <input type="text" placeholder="Search..." name="search">
+        <button type="submit">Submit</button>
+    </form>
+  </article>
+  <article class="footer_column">
+    <h3>View My Profile</h3>
+    <img src="{% static 'images/placeholder.jpg' %}" alt="" width="400" height="200" class="cards"/>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla </p>
+  </article>
+</footer>
+<!-- About Section -->
+<section class="about" id="about">
+  <h2 class="hidden">About</h2>
+  <p class="text_column">Explains what this site is for... <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+  <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+  <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+</section>
+{% endblock %}

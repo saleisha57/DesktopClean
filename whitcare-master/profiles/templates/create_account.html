@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="create" id="create">
+ 	<form action="" method="post">
+		<div>
+			<h3>Create An Account:</h3>
+			<label for="{{ form.email.id_for_label }}" class="login">Email Address: </label>
+				{{ form.email }}
+			<br/>
+			<label for="{{ form.password.id_for_label }}" class="login">Password: </label>
+				{{ form.password }}
+		</div>
+		<div class="submit">
+			<input type="submit" class="login" value="Submit" id="basic" />
+		</div>
+    {% csrf_token %}
+	 </form>
+	</section>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Login Section -->
+<section class="login" id="login">
+	<h2 class="hidden">Login</h2>
+
+	<form action="" method="post">
+	<div>
+		<h3>Login</h3>
+		<label for="{{ form.email.id_for_label }}" class="login">Email Address: </label>
+			{{ form.email }}
+		<br/>
+		<label for="{{ form.password.id_for_label }}" class="login">Password: </label>
+			{{ form.password }}
+	</div>
+	<div class="submit">
+		<input type="submit" class="login" value="Submit" id="basic" />
+	</div>
+	{% csrf_token %}
+	</form>
+</section>
+
+
+<div class="create">
+	<form action="create_account" method="GET">
+	<label for="create" class="create">Don't have an account? </label>
+	<input type="submit" class="create" value="Create an Account" id="basic" />
+</form>
+</div>
+{% endblock %}
